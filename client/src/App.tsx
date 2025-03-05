@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Header } from "./components/Header"
 import { Home } from "./pages/Home/Home"
 import { Login } from "./pages/Login/Login"
@@ -10,14 +10,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      <h1>Hello World!</h1>
       <Header />
+      <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/register" element={<Register />}/>
       <Route path="/restaurant/:id" element={<Home />}/>
       <Route path="/cart" element={<Cart />}/>
+      </Routes>
     </BrowserRouter>
+
   )
 }
 
