@@ -1,7 +1,7 @@
 export const RestaurantDetails = () => {
   return (
     <>
-      <h1>Restuarant Details</h1>
+      <h1>Restuarant-Details</h1>
     </>
   );
 };
