@@ -37,7 +37,7 @@ router.post("/login", async (req, res)=>{
             return res.status(400).json({ message: "Credenciales invalidas" });
         }
         // token generator
-        const token = jwt.sing( {id: user._id, role: user.role }, process.env.JWT_SECRET || "",{ expiresIn: "1h" })
+        const token = jwt.sing( {id: user._id, role: user.role }, process.env.JWT_SECRET || "", { expiresIn: "1h" })
         res.status(200).json({ message: "Inicio de sesión exitoso", token });
   } catch (error) {
     console.error(error);
