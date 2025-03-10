@@ -5,7 +5,7 @@ import User from "../models/User"
 
 const router = express.Router()
 // User Register
-router.post("/register",async(req, res)=>{
+router.post("/register", async(req, res)=>{
     try{
         const {name ,email, password, role} = req.body;
         const existingUser = await User.findOne({ email });
@@ -32,7 +32,7 @@ router.post("/register",async(req, res)=>{
 router.post("/login", async (req, res)=>{
     try{
         const {email, name} = req.body;
-        const user = await User.find({ email });
+        const user = await User.findOne({ email });
         if(!user){
             return res.status(400).json({ message: "Credenciales invalidas" });
         }
