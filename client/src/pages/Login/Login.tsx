@@ -28,6 +28,8 @@ export const Login = ()=>{
     return(
         <section>
             <form className="form" onSubmit={handleSubmit}>
+                <div className="container">
+                    <h1>Log In</h1>
                 <div className="email">
                     <label htmlFor="" className="">Email</label>
                     <input type="text" value={email} onChange={(event) =>setEmail(event.target.value)}/>
@@ -37,7 +39,8 @@ export const Login = ()=>{
                     <input type="text" value={passWord} onChange={(event)=>setPassWord(event.target.value)}/>
                 </div>
                 {error && <p className="error">{error}</p>}
-                <button type="submit">Log in</button>
+                <button type="submit" className="submit">Log in</button>
+                </div>
             </form>
         </section>
     )
