@@ -1,8 +1,16 @@
+import { useState } from "react";
 import "./Login.css";
 export const Login = ()=>{
+    const [ email, setEmail ] = useState("")
+
     return(
-        <>
-            <h1>Login</h1>
-        </>
+        <section>
+            <form>
+                <label htmlFor="">Email</label>
+                <input type="text" value={email} onChange={(event) =>setEmail(event.target.value)}/>
+                <label htmlFor=""> Password</label>
+                <input type="text" />
+            </form>
+        </section>
     )
 }
