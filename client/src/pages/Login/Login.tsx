@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Login.css";
+import axios from "axios";
 export const Login = ()=>{
     const [ email, setEmail ] = useState<string>("")
     const [passWord, setPassWord] = useState<string>("");
@@ -16,10 +17,12 @@ export const Login = ()=>{
             return;
           }
         try{
-            console.log(email,passWord)
-            setError(null)
+            const response = await axios.post("http://localhost:5000/api/auth/login",{email, passWord});
+            localStorage.setItem("token",response.data.token);
+            alert("Succesfull Login")
+            window.location.href = "/";
         }catch(error){
-            setError("login Error")
+            setError(error instanceof Error ? error.message : "An unexpected error occurred");
         }
     }
     return(
