@@ -7,7 +7,7 @@ import orderRoutes from "./routes/orderRoutes";
 // Carga las variables de entorno
 dotenv.config();
 
-// Conecta a MongoDB
+// Conecta a MongoDBgit 
 connectDB();
 
 // Crea una instancia de Express
