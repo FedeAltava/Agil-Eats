@@ -23,9 +23,7 @@ const restaurantSchema = new Schema<IRestaurant>({
   cuisineType: { type: String, required: true },
   menu: [
     {
-      mealId: { type: String, required: true }, // ID del plato en TheMealDB
-      name: { type: String, required: true }, // Nombre del plato
-      image: { type: String, required: true }, // URL de la imagen del plato
+      productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" }, // Referencia al plato
       price: { type: Number, required: true }, // Precio asignado por el restaurante
     },
   ],
