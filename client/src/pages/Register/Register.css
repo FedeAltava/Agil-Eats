@@ -1,0 +1,20 @@
+section{  
+    place-items: center; 
+    padding: 5%;
+}
+form{
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 20px 50px;
+    -webkit-box-shadow: 6px 10px 27px 3px rgba(196,186,196,0.86);
+    -moz-box-shadow: 6px 10px 27px 3px rgba(196,186,196,0.86);
+    box-shadow: 6px 10px 27px 3px rgba(196,186,196,0.86);
+    min-width: 40%;
+}
+label{
+    margin-top: 5px;;
+}
+.column{
+    display: grid;
+    grid-template-columns: 1fr;
+}

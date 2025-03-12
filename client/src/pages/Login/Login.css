@@ -1,7 +1,5 @@
 section{
-    
-    place-items: center; /* Centra tanto horizontal como verticalmente */
-
+    place-items: center; 
 }
 
 .form{
