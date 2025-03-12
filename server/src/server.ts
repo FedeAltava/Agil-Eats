@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db";
-
+import authRoutes from "./routes/authRoutes";
+import restaurantRoutes from "./routes/restaurantRoutes";
+import orderRoutes from "./routes/orderRoutes";
 // Carga las variables de entorno
 dotenv.config();
 
@@ -16,6 +18,11 @@ app.use(express.json());
 
 // Puerto del servidor
 const PORT = process.env.PORT || 5000;
+// Rutas
+// Registrar las rutas
+app.use("/api/auth", authRoutes); // Rutas de autenticación
+app.use("/api/restaurants", restaurantRoutes); // Rutas de restaurantes
+app.use("/api/orders", orderRoutes); // Rutas de pedido
 
 // Ruta de prueba
 app.get("/", (req, res) => {
